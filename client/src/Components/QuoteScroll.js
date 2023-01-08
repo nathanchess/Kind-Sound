@@ -7,7 +7,7 @@ import { Store } from 'react-notifications-component'
 import { MovingComponent } from 'react-moving-text'
 
 import ReactAudioPlayer from 'react-audio-player';
-import OnMyWayLofi from '../Assets/On-My-Way-Lofi-Study-Music.mp3'
+import OnMyWayLofi from '../Assets/backing.mp3'
 
 const QuoteScroll = () => {
 
@@ -97,6 +97,7 @@ const QuoteScroll = () => {
                 </div>
             </div>
             <ReactAudioPlayer src={OnMyWayLofi} autoPlay />
+            <h1 id='music-playing'>Now Playing: On My Way - Lofi Study Beats</h1>
         </>
     )
 }

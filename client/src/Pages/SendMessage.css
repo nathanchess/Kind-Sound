@@ -7,9 +7,9 @@
 }
 
 #message-input {
-  width: clamp(400px, 50vw, 1000px);
-  height: 60vh;
-  font-size: 20px;
+  width: clamp(300px, 50vw, 1000px);
+  height: min(60vh, 500px);
+  font-size: 25px;
   resize: none;
   border-style: none;
   background-image: linear-gradient(to bottom right, #ffebdb, #ffe0d0);

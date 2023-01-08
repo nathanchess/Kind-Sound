@@ -41,7 +41,7 @@ backend.get("/api/random_phrase/", (req, res) => {
     });
 });
 
-backend.put('/api/add_phrase/', (req, res) => {
+backend.post('/api/add_phrase/', (req, res) => {
     const phrase = req.headers["phrase"];
     analyzeText(phrase, process.env.OPENAI_KEY).then(sentiment => {
         if (!sentiment) {

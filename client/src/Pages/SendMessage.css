@@ -33,9 +33,18 @@
   color: white;
   margin-top: 10vh;
   padding: 8px 15px;
+  transition: .35s all;
 }
 
 .submit-message:hover {
   background-color: white;
   color:black;
+  border-color: black;  
+  transition: .35s all;
 }
+
+.submit-message:active {
+  padding: 5px 12px;
+  transition: .15s all;
+}
+

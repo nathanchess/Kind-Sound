@@ -14,7 +14,7 @@ const QuoteScroll = () => {
         const dislikeButton = document.getElementById('dislike-button')
         if (liked !== false) {
             setLiked(false)
-            dislikeButton.style.fill = 'red'
+            dislikeButton.style.fill = '#f26363'
             likeButton.style.fill = 'white'
             Store.addNotification({
                 title: 'Oh No!',
@@ -38,7 +38,7 @@ const QuoteScroll = () => {
         if (liked !== true) {
             setLiked(true)
             dislikeButton.style.fill = 'white'
-            likeButton.style.fill = 'green'
+            likeButton.style.fill = '#71f36d'
             Store.addNotification({
                 title: 'Like added!',
                 message: 'We will try our best to personalize the quotes to your likes!',
@@ -71,7 +71,7 @@ const QuoteScroll = () => {
                 <div class='text'>
                     {currentQuote}
                     <hr></hr>
-                    <MovingComponent id='sender' type="fadeIn" duration="1000ms" delay="0s" direction="normal" timing="ease" iteration="1" fillMode="forwards">-Anonymous</MovingComponent>
+                    <MovingComponent id='sender' type="fadeIn" duration="1000ms" delay="0s" direction="normal" timing="ease" iteration="1" fillMode="forwards">All these messages have been sent by anonymous internet users and scanned by our sentiment AI! (Note: Our AI is not perfect)</MovingComponent>
                 </div>
                 <div class='options'>
                 <svg id='dislike-button' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" onClick={dislike}>

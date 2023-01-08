@@ -1,0 +1,19 @@
+.send-message {
+  display: flex;
+  justify-content: center;
+}
+
+#message-input {
+  width: clamp(400px, 50vw, 1000px);
+  height: 60vh;
+  font-size: 20px;
+  resize: none;
+  border-style: none;
+  background-image: linear-gradient(to bottom right, #ffebdb, #ffe0d0);
+  padding: 10px;
+  border-radius: 20px;
+}
+
+#message-input:focus {
+  outline-style: none;
+}

@@ -10,7 +10,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <BrowserRouter>
-        <TopBar />
         <Routes>
             <Route path='/' element={<QuoteScroll />}/>
             <Route path='/send' element={<SendMessage />}/>

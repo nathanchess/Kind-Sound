@@ -64,7 +64,7 @@ button, a {
   transform: translate(102.5px);
 }
 
-#topBarWrap a:hover hr  {
+#topBarWrap .sendPhrase:hover hr  {
   max-height: 20px;
   height: 20px;
   max-width: 1px;
@@ -74,27 +74,31 @@ button, a {
   border-radius: 20px;
 }
 
-#topBarWrap a:hover svg  {
+#topBarWrap .sendPhrase:hover svg  {
   animation-name: rightArrow;
   animation-duration: 0.35s;
   animation-fill-mode: forwards; 
   opacity: 1; 
 }
 
-#topBarWrap a:hover  {
+#topBarWrap .sendPhrase:hover  {
   background: white;
   border-color: black;
   color: black;
   padding-right: 40px;
 }
 
-#topBarWrap a:active  {
-  background: #333;
-  color: white;
-  border-color: white;
+#topBarWrap a:hover  {
+  background: white;
+  border-color: black;
+  color: black;
 }
 
-#topBarWrap svg {
+#topBarWrap a:active  {
+  background: rgb(180, 180, 180);
+}
+
+#topBarWrap  svg {
   position: absolute;
   opacity: 0;
   height: 20px;
@@ -145,8 +149,9 @@ button, a {
   padding: 20px 200px;
 }
 
-#quote-section .text h1 {
+#quote-section .text #quote {
   margin-bottom: 10px;
+  font-size: 30px;
 }
 
 #quote-section .text hr {
@@ -172,10 +177,13 @@ button, a {
 #quote-section svg {
   height: 30px;
   cursor: pointer;
+  fill: white;
+  transition: .35s all;
 }
 
 #quote-section svg:hover {
-  color:white;
+  -webkit-filter: drop-shadow(0px 0px 7px rgba(255, 255, 255, 0.5));
+  transition: .35s all;
 }
 
 #quote-section .newQuote:hover {

@@ -5,6 +5,9 @@ import MusicPlayer from './MusicPlayer'
 import { Store } from 'react-notifications-component'
 import { MovingComponent } from 'react-moving-text'
 
+import ReactAudioPlayer from 'react-audio-player';
+import OnMyWayLofi from '../Assets/On-My-Way-Lofi-Study-Music.mp3'
+
 const QuoteScroll = () => {
 
     const [liked, setLiked] = useState(null)
@@ -84,7 +87,7 @@ const QuoteScroll = () => {
 </svg>
                 </div>
             </div>
-            <MusicPlayer />
+            <ReactAudioPlayer src={OnMyWayLofi} autoPlay />
         </>
     )
 }

@@ -307,3 +307,10 @@ button, a {
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
+
+/* Audio Player */
+audio {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}

@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import TopBar from './TopBar'
-import MusicPlayer from './MusicPlayer'
+
+import shortid from 'shortid'
 
 import { Store } from 'react-notifications-component'
 import { MovingComponent } from 'react-moving-text'
+
+import ReactAudioPlayer from 'react-audio-player';
+import OnMyWayLofi from '../Assets/On-My-Way-Lofi-Study-Music.mp3'
 
 const QuoteScroll = () => {
 

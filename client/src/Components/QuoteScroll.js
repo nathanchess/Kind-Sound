@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 const QuoteScroll = () => {
 
     const [liked, setLiked] = useState(null)
+    const [quoteData, setQuoteData] = useState()
 
     function dislike(event) {
         var likeButton = document.getElementById('like-button')

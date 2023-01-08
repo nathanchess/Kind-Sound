@@ -1,0 +1,115 @@
+/* Universal Styling */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito';
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Top Bar Styling */
+
+#topBarWrap {
+  display: flex;
+  flex-direction: row;
+  background: black;
+  align-items: center;
+  padding: 20px 0;
+  padding-left: 50px;
+}
+
+#topBarWrap button {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+  overflow: hidden;
+  gap: 10px;
+  padding: 2px 10px;
+  height: 40px;
+  font-weight: bold;
+  text-decoration: none;
+  background: #333;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 1px solid #333;
+  transition: all .35s;
+  border-radius: 10px;
+}
+
+#topBarWrap button hr {
+  position: absolute;
+  max-height: 0px;
+  max-width: 0px;
+  height: 0px;
+  overflow: hidden;
+  transition: all .35s;
+  opacity: 0;
+  transform: translate(90px);
+}
+
+#topBarWrap button:hover hr  {
+  max-height: 25px;
+  height: 25px;
+  transition: all .35s;
+  opacity: 1;
+}
+
+#topBarWrap button:hover svg  {
+  animation-name: rightArrow;
+  animation-duration: 0.35s;
+  animation-fill-mode: forwards; 
+  opacity: 1; 
+}
+
+#topBarWrap button:hover  {
+  background: rgb(255, 31, 87);
+  border-color: white;
+  padding-right: 50px;
+}
+
+#topBarWrap button:active  {
+  background: rgb(211, 28, 74);
+}
+
+#topBarWrap svg {
+  position: absolute;
+  opacity: 0;
+  height: 20px;
+  transform: translate(90px);
+}
+
+@keyframes rightArrow {
+  0% {
+      transform: translate(80px);
+  }
+  100% {
+      transform: translate(100px);
+  }
+}
+
+/* Title */
+#topBarWrap #titleWrap {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+} 
+
+#topBarWrap #titleWrap h1 {
+  letter-spacing: 2px;
+  font-size: 15px;
+}
+
+#topBarWrap #titleWrap p {
+  letter-spacing: 1px;
+  font-size: 13px;
+}

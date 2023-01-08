@@ -16,6 +16,19 @@ const QuoteScroll = () => {
             setLiked(false)
             dislikeButton.style.fill = 'red'
             likeButton.style.fill = 'white'
+            Store.addNotification({
+                title: 'Oh No!',
+                message: 'We will try our best to avoid quotes like these :(',
+                type: 'danger',
+                insert: 'bottom',
+                container: 'bottom-right',
+                animationIn: ['animate__animated animate__fadeIn'],
+                animationOut: ["animate__animated", "animate__fadeOut"],
+                dismiss: {
+                    duration: 5000,
+                    onScreen: true
+                  }
+            })
         }
     }
 

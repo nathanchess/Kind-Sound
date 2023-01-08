@@ -1,6 +1,4 @@
-import { Configuration, OpenAIApi } from 'openai';
-
-
+const { Configuration, OpenAIApi } = require('openai');
 const analyzeText = async (message, apiKey) => {
     /* returns true is the message is positive and false is the message is negative */
     const configuration = new Configuration({
@@ -18,5 +16,5 @@ const analyzeText = async (message, apiKey) => {
     return text.includes('positive');
 }
 
-export default analyzeText;
+module.exports = analyzeText;
 

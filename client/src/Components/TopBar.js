@@ -2,6 +2,7 @@ import React from 'react'
 
 import { Link } from 'react-router-dom'
 
+/* TODO: change the SEND ONE! button to reroute back to main page */
 const TopBar = () => {
   return (
     <div id="topBarWrap">

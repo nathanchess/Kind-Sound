@@ -5,9 +5,6 @@ import MusicPlayer from './MusicPlayer'
 import { Store } from 'react-notifications-component'
 import { MovingComponent } from 'react-moving-text'
 
-import ReactAudioPlayer from 'react-audio-player';
-import OnMyWayLofi from '../Assets/On-My-Way-Lofi-Study-Music.mp3'
-
 const QuoteScroll = () => {
 
     const [liked, setLiked] = useState(null)
@@ -60,22 +57,30 @@ const QuoteScroll = () => {
     }
 
     function getQuote() {
-        fetch('http://localhost:5000/api/random_phrase/').then(response => response.json()).then(phrase => setQuote(<div id='quote'>{phrase.phrase.replace(/['"]+/g, '')}</div>))
-        console.log('re-rendeered')
+        fetch('http://localhost:5000/api/random_phrase/').then(response => response.json()).then(phrase => {
+            setQuote(<div key={getId()} id="quote"
+                          className={'fade-in-text'} style={{animationPlayState: 'running'}}>{phrase.phrase.replace(/['"]+/g, '')}</div>);
+        })
     }
 
     useEffect(() => {
         document.getElementById('quote').style.animationPlayState = 'running'
     }, [])
 
+    const getId = () => {
+        const id = shortid.generate()
+        console.log(id)
+        return id
+    }
+
     return (
         <>
             <TopBar text='SEND ONE!' location='/send' />
             <div id='quote-section'>
-                <div class='text'>
+                <div className='text'>
                     {currentQuote}
                     <hr></hr>
-                    <MovingComponent id='sender' type="fadeIn" duration="1000ms" delay="0s" direction="normal" timing="ease" iteration="1" fillMode="forwards">All these messages have been sent by anonymous internet users and scanned by our sentiment AI! (Note: Our AI is not perfect)</MovingComponent>
+                    <MovingComponent id='sender' type="fadeIn" duration="1000ms" delay="0s" direction="normal" timing="ease" iteration="1" fillMode="forwards">All these messages have been sent by anonymous internet users and scanned by a cutting edge natural language AI!</MovingComponent>
                 </div>
                 <div class='options'>
                 <svg id='dislike-button' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" onClick={dislike}>

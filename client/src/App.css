@@ -64,6 +64,16 @@ button, a {
   transform: translate(102.5px);
 }
 
+#topBarWrap .sendHome:hover hr  {
+  max-height: 20px;
+  height: 20px;
+  max-width: 1px;
+  width: 1px;
+  transition: all .35s;
+  opacity: 1;
+  border-radius: 20px;
+}
+
 #topBarWrap .sendPhrase:hover hr  {
   max-height: 20px;
   height: 20px;
@@ -178,7 +188,7 @@ button, a {
   height: 30px;
   cursor: pointer;
   fill: white;
-  transition: .35s all;
+  transition: .15s all;
 }
 
 #quote-section svg:hover {

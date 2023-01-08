@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import TopBar from './TopBar'
 
+import { Store } from 'react-notifications-component'
 import { MovingComponent } from 'react-moving-text'
 
 const QuoteScroll = () => {
@@ -9,8 +10,8 @@ const QuoteScroll = () => {
     const [currentQuote, setQuote] = useState('I once though college was difficult as well, but we will get through it together')
 
     function dislike() {
-        var likeButton = document.getElementById('like-button')
-        var dislikeButton = document.getElementById('dislike-button')
+        const likeButton = document.getElementById('like-button')
+        const dislikeButton = document.getElementById('dislike-button')
         if (liked !== false) {
             setLiked(false)
             dislikeButton.style.fill = 'red'
@@ -19,13 +20,31 @@ const QuoteScroll = () => {
     }
 
     function like() {
-        var likeButton = document.getElementById('like-button')
-        var dislikeButton = document.getElementById('dislike-button')
+        const likeButton = document.getElementById('like-button')
+        const dislikeButton = document.getElementById('dislike-button')
         if (liked !== true) {
             setLiked(true)
             dislikeButton.style.fill = 'white'
             likeButton.style.fill = 'green'
+            Store.addNotification({
+                title: 'Like added!',
+                message: 'We will try our best to personalize the quotes to your likes!',
+                type: 'success',
+                insert: 'bottom',
+                container: 'bottom-right',
+                animationIn: ['animate__animated animate__fadeIn'],
+                animationOut: ["animate__animated", "animate__fadeOut"],
+                dismiss: {
+                    duration: 5000,
+                    onScreen: true
+                  }
+            })
         }
+    }
+
+    function getQuote() {
+        const quote = document.querySelector('#quote')
+        fetch('http://localhost:5000/api/random_phrase/').then(response => response.json()).then(phrase => setQuote(phrase.phrase))
     }
 
     return (

@@ -37,8 +37,10 @@ backend.get("/api/random_phrase/", (req, res) => {
     getCurrentPhrases().then((phrases) => {
         const keys = Object.keys(phrases);
         const randomIdx = Math.floor(Math.random() * keys.length);
-        res.json({"phrase": phrases[keys[randomIdx]][0]})
-    });
+        res.setHeader('Content-Type', 'application/json');
+        console.log(`Getting random phrase: ${phrases[keys[randomIdx]][0]}`)
+        res.json({phrase: phrases[keys[randomIdx]][0]})
+    })
 });
 
 backend.post('/api/add_phrase/', (req, res) => {

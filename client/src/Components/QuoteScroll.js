@@ -9,8 +9,8 @@ const QuoteScroll = () => {
     const [currentQuote, setQuote] = useState('I once though college was difficult as well, but we will get through it together')
 
     function dislike() {
-        var likeButton = document.getElementById('like-button')
-        var dislikeButton = document.getElementById('dislike-button')
+        const likeButton = document.getElementById('like-button')
+        const dislikeButton = document.getElementById('dislike-button')
         if (liked !== false) {
             setLiked(false)
             dislikeButton.style.fill = 'red'
@@ -19,13 +19,18 @@ const QuoteScroll = () => {
     }
 
     function like() {
-        var likeButton = document.getElementById('like-button')
-        var dislikeButton = document.getElementById('dislike-button')
+        const likeButton = document.getElementById('like-button')
+        const dislikeButton = document.getElementById('dislike-button')
         if (liked !== true) {
             setLiked(true)
             dislikeButton.style.fill = 'white'
             likeButton.style.fill = 'green'
         }
+    }
+
+    function getQuote() {
+        const quote = document.querySelector('#quote')
+        fetch('http://localhost:5000/api/random_phrase/').then(response => response.json()).then(phrase => setQuote(phrase.phrase))
     }
 
     return (

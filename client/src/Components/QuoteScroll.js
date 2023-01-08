@@ -4,6 +4,8 @@ import TopBar from './TopBar'
 import { Store } from 'react-notifications-component'
 import { MovingComponent } from 'react-moving-text'
 
+import shortid from 'shortid'
+
 const QuoteScroll = () => {
 
     const [liked, setLiked] = useState(null)
@@ -64,11 +66,17 @@ const QuoteScroll = () => {
         document.getElementById('quote').style.animationPlayState = 'running'
     }, [])
 
+    const getId = () => {
+        const id = shortid.generate()
+        console.log(id)
+        return id
+    }
+
     return (
         <>
             <TopBar text='SEND ONE!' location='/send' />
             <div id='quote-section'>
-                <div class='text'>
+                <div key={getId()} className='text'>
                     {currentQuote}
                     <hr></hr>
                     <MovingComponent id='sender' type="fadeIn" duration="1000ms" delay="0s" direction="normal" timing="ease" iteration="1" fillMode="forwards">-Anonymous</MovingComponent>

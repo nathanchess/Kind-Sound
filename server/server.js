@@ -1,9 +1,9 @@
 const dotenv = require('dotenv')
 
-const express = require('express')
+const express = require('express');
 const { initializeApp } = require('firebase/app');
 const { getFirestore, collection, getDocs, doc, updateDoc} = require('firebase/firestore');
-const backend = express()
+const backend = express();
 
 const analyzeText = require("./nlp");
 
@@ -35,6 +35,7 @@ backend.get("/api/random_phrase/", (req, res) => {
 });
 
 backend.put('/api/add_phrase/', (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*")
     const phrase = req.headers["phrase"];
     analyzeText(phrase, process.env.OPENAI_KEY).then(sentiment => {
         if (!sentiment) {

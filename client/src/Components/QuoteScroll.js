@@ -33,8 +33,7 @@ const QuoteScroll = () => {
             <TopBar text='SEND ONE!' location='/send' />
             <div id='quote-section'>
                 <div class='text'>
-                    
-                    <MovingComponent id='quote' type="fadeIn" duration="1000ms" delay="0s" direction="normal" timing="ease" iteration="1" fillMode="forwards">Made with love</MovingComponent>
+                    <MovingComponent id='quote' type="fadeIn" duration="1000ms" delay="0s" direction="normal" timing="ease" iteration="1" fillMode="forwards">{currentQuote}</MovingComponent>
                     <hr></hr>
                     <MovingComponent id='sender' type="fadeIn" duration="1000ms" delay="0s" direction="normal" timing="ease" iteration="1" fillMode="forwards">-Anonymous</MovingComponent>
                 </div>

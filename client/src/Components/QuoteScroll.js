@@ -7,7 +7,7 @@ import { Store } from 'react-notifications-component'
 import { MovingComponent } from 'react-moving-text'
 
 import ReactAudioPlayer from 'react-audio-player';
-import OnMyWayLofi from '../Assets/On-My-Way-Lofi-Study-Music.mp3'
+import Audio from '../Assets/peacefulmusic.mp3'
 
 const QuoteScroll = () => {
 
@@ -96,7 +96,7 @@ const QuoteScroll = () => {
 </svg>
                 </div>
             </div>
-            <ReactAudioPlayer src={OnMyWayLofi} autoPlay />
+            <ReactAudioPlayer src={Audio} autoPlay />
         </>
     )
 }

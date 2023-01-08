@@ -7,7 +7,7 @@
   font-family: 'Nunito';
 }
 
-.App {
+#root {
   box-sizing: border-box;
   position: absolute;
   width: 100vw;
@@ -17,7 +17,7 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-button {
+button, a {
   cursor: pointer;
 }
 
@@ -26,13 +26,12 @@ button {
 #topBarWrap {
   display: flex;
   flex-direction: row;
-  background: black;
+  background: none;
   align-items: center;
   padding: 20px 0;
-  padding-left: 50px;
 }
 
-#topBarWrap button {
+#topBarWrap a {
   position: absolute;
   display: flex;
   flex-direction: row;
@@ -44,17 +43,17 @@ button {
   height: 40px;
   font-weight: bold;
   text-decoration: none;
-  background: #333;
+  background: none;
   text-align: center;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 1px;
-  border: 1px solid #333;
+  border: 1px solid white;
   transition: all .35s;
-  border-radius: 10px;
+  left: 50px;
 }
 
-#topBarWrap button hr {
+#topBarWrap a hr {
   position: absolute;
   max-height: 0px;
   max-width: 0px;
@@ -62,31 +61,37 @@ button {
   overflow: hidden;
   transition: all .35s;
   opacity: 0;
-  transform: translate(90px);
+  transform: translate(102.5px);
 }
 
-#topBarWrap button:hover hr  {
-  max-height: 25px;
-  height: 25px;
+#topBarWrap a:hover hr  {
+  max-height: 20px;
+  height: 20px;
+  max-width: 1px;
+  width: 1px;
   transition: all .35s;
   opacity: 1;
+  border-radius: 20px;
 }
 
-#topBarWrap button:hover svg  {
+#topBarWrap a:hover svg  {
   animation-name: rightArrow;
   animation-duration: 0.35s;
   animation-fill-mode: forwards; 
   opacity: 1; 
 }
 
-#topBarWrap button:hover  {
-  background: rgb(255, 31, 87);
-  border-color: white;
-  padding-right: 50px;
+#topBarWrap a:hover  {
+  background: white;
+  border-color: black;
+  color: black;
+  padding-right: 40px;
 }
 
-#topBarWrap button:active  {
-  background: rgb(211, 28, 74);
+#topBarWrap a:active  {
+  background: #333;
+  color: white;
+  border-color: white;
 }
 
 #topBarWrap svg {
@@ -98,10 +103,10 @@ button {
 
 @keyframes rightArrow {
   0% {
-      transform: translate(80px);
+      transform: translate(90px);
   }
   100% {
-      transform: translate(100px);
+      transform: translate(110px);
   }
 }
 
@@ -124,55 +129,85 @@ button {
   font-size: 13px;
 }
 
-/* Message Box */
-#messageBox {
-  position: absolute;
-  left: 40%;
-  top: 40%;
-  z-index: 10;
-  align-items: center;
+/* Quote Section */
+#quote-section {
   display: flex;
   flex-direction: column;
-  width: 400px;
-  color: white;
+  align-items: center;
+  justify-content: center;
+  gap: 40px 0;
+  height: 80vh;
 }
 
-#messageBox textarea {
-  width: 100%;
-  background: none;
-  border: none;
-  resize: none;
-  color: white;
-}
-
-#messageBox textarea::placeholder {
-  color: rgb(172, 172, 172);
-}
-
-#messageBox hr {
-  width: 100%;
-}
-
-
-#messageBox button {
-  gap: 10px;
-  padding: 2px 20px;
-  height: 40px;
-  font-weight: bold;
-  text-decoration: none;
-  background: #333;
+#quote-section .text {
   text-align: center;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  border: 1px solid #333;
-  transition: all .35s;
-  border-radius: 10px;
+  color: white;
+  padding: 20px 200px;
 }
 
-#messageBox button:hover {
-  background: rgb(255, 31, 87);
-  border-color: white;
+#quote-section .text h1 {
+  margin-bottom: 10px;
 }
 
+#quote-section .text hr {
+  margin-bottom: 20px;
+}
 
+#quote-section .options {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+#quote-section .newQuote {
+  background: none;
+  border: 1px solid white;
+  padding: 10px;
+  color: white;
+  transition: .35s all;
+}
+
+#quote-section svg {
+  height: 30px;
+  cursor: pointer;
+}
+
+#quote-section svg:hover {
+  color:white;
+}
+
+#quote-section .newQuote:hover {
+  background: white;
+  color: black;
+  transition: .35s all;
+}
+
+.hover-underline-animation-black {
+  display: inline-block;
+  position: relative;
+}
+
+.hover-underline-animation-black:hover {
+  transition: color .5s ease-out;
+  color: black
+}
+
+.hover-underline-animation-black::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation-black:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}

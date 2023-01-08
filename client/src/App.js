@@ -1,14 +1,21 @@
 import './App.css';
 
+import QuoteScroll from './Components/QuoteScroll';
+import SendMessage from './Pages/SendMessage';
+
 import TopBar from './Components/TopBar';
-import SendMessage from './Components/SendMessage';
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <TopBar />
-      <SendMessage />
-    </div>
+    <BrowserRouter>
+        <TopBar />
+        <Routes>
+            <Route path='/' element={<QuoteScroll />}/>
+            <Route path='/send' element={<SendMessage />}/>
+        </Routes>
+    </BrowserRouter>
   );
 }
 

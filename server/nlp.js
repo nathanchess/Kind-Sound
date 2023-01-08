@@ -9,7 +9,7 @@ const analyzeText = async (message, apiKey) => {
         model: "text-curie-001",
         prompt: `Decide if the sentiment of this message is positive, neutral, or negative:${message}`,
         temperature: 0,
-        max_tokens: 200,
+        max_tokens: 1000,
     });
 
     const text = response.data.choices[0].text;

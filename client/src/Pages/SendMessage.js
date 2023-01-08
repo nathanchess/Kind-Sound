@@ -13,19 +13,29 @@ import axios from 'axios';
 const SendMessage = () => {
 
   function sentToDatabase() {
-    const messageInput = document.getElementById('message-input').value;
-    console.log(messageInput)
-    if (messageInput.length === 0) {
+    const messageInput = document.getElementById('message-input');
+    const messageInputValue = messageInput.value;
+    console.log(messageInputValue)
+    if (messageInputValue.length === 0) {
       // ERROR
     } else {
 
         const requestOptions = {
             method: 'POST',
             mode: 'cors',
-            headers: { 'Content-Type': 'application/json', 'phrase': messageInput },
-            body: JSON.stringify({ phrase: messageInput })
+            headers: { 'Content-Type': 'application/json', 'phrase': messageInputValue },
+            body: JSON.stringify({ phrase: messageInputValue })
         };
-        fetch('http://localhost:5000/api/add_phrase', requestOptions).then(response => console.log(response.status))
+        fetch('http://localhost:5000/api/add_phrase', requestOptions).then(response => {
+            console.log(response.status);
+            if (response.status === 403) {
+
+            } else if (response.status === 200) {
+                messageInput.value = ""
+            } else {
+
+            }
+        })
 
 
     }
@@ -36,7 +46,7 @@ const SendMessage = () => {
       <TopBar text='HOME' location='/' />
       <div className="send-message">
         <textarea id="message-input" placeholder="Ex: I hope you have a wonderful day! (max 200 characters)" maxLength="200"></textarea>
-        <button className="submit-message" onClick={sentToDatabase}>SEND!</button>
+          <button className="submit-message" onClick={sentToDatabase}>SEND!</button>
       </div>
     </>
   )

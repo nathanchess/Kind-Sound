@@ -96,7 +96,7 @@ const QuoteScroll = () => {
 </svg>
                 </div>
             </div>
-            <ReactAudioPlayer src={OnMyWayLofi} autoPlay />
+            <ReactAudioPlayer src={OnMyWayLofi} autoPlay loop={true} />
             <h1 id='music-playing'>Now Playing: On My Way - Lofi Study Beats</h1>
         </>
     )

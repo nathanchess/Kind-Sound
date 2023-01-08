@@ -1,20 +1,29 @@
+/* Universal Styling */
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Nunito';
 }
 
 button {
     cursor: pointer;
 }
 
+/* Top Bar Styling */
+
 #topBarWrap {
+    display: flex;
+    flex-direction: row;
     background: black;
+    align-items: center;
     padding: 20px 0;
     padding-left: 50px;
 }
 
 #topBarWrap button {
+    position: absolute;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -85,3 +94,23 @@ button {
         transform: translate(100px);
     }
 }
+
+/* Title */
+#topBarWrap #titleWrap {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+} 
+
+#topBarWrap #titleWrap h1 {
+    letter-spacing: 2px;
+    font-size: 15px;
+}
+
+#topBarWrap #titleWrap p {
+    letter-spacing: 1px;
+    font-size: 13px;
+}
+

@@ -7,6 +7,7 @@ import { Store } from 'react-notifications-component'
 import { MovingComponent } from 'react-moving-text'
 
 import ReactAudioPlayer from 'react-audio-player';
+
 import Audio from '../Assets/peacefulmusic.mp3'
 
 const QuoteScroll = () => {
@@ -96,7 +97,10 @@ const QuoteScroll = () => {
 </svg>
                 </div>
             </div>
+
             <ReactAudioPlayer src={Audio} autoPlay />
+
+            <h1 id='music-playing'>Now Playing: Peder B. Helland: Early in the Morning</h1>
         </>
     )
 }

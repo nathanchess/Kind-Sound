@@ -314,3 +314,10 @@ audio {
   bottom: 0;
   width: 100%;
 }
+
+#music-playing {
+  position: absolute;
+  bottom: 0;
+  font-size: 16px;
+  color: white;
+}

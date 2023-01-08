@@ -29,6 +29,7 @@ button, a {
   background: none;
   align-items: center;
   padding: 20px 0;
+  z-index: 2;
 }
 
 #topBarWrap a {
@@ -165,6 +166,7 @@ button, a {
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
+  z-index: 2;
 } 
 
 #topBarWrap #titleWrap h1 {
@@ -185,6 +187,7 @@ button, a {
   justify-content: center;
   gap: 40px 0;
   height: 80vh;
+  z-index: 2;
 }
 
 #quote-section .text {
@@ -239,6 +242,7 @@ button, a {
 .hover-underline-animation-black {
   display: inline-block;
   position: relative;
+  z-index: 2;
 }
 
 .hover-underline-animation-black:hover {
@@ -257,11 +261,13 @@ button, a {
   background-color: black;
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
+  z-index: 2;
 }
 
 .hover-underline-animation-black:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+  z-index: 2;
 }
 
 .fade-in-text {
@@ -274,6 +280,7 @@ button, a {
   animation-fill-mode: forwards; 
   animation-iteration-count: 1;
   animation-play-state: paused;
+  z-index: 2;
 }
 
 @keyframes fadeIn {

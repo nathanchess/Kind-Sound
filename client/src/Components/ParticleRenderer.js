@@ -5,6 +5,7 @@ var zoff = 0;
 
 var inc = 0.1;
 var scl = 20;
+var width, height;
 var cols, rows;
 var particles = [];
 
@@ -15,6 +16,8 @@ var canvas;
 export default (props) => {
     const setup = (p, canvasParentRef) => {
         canvas = p.createCanvas(p.windowWidth-10, p.windowHeight-10).parent(canvasParentRef);
+	width = p.windowWidth-10;
+	height = p.windowHeight-10;
         canvas.position(0,0)
         canvas.style('z-index', '0');
         
@@ -106,17 +109,17 @@ export default (props) => {
             particles[i].pF.fill(255,255,255);
             particles[i].pF.rect(particles[i].pos[0], particles[i].pos[1], 7, 7)
 
-            if (particles[i].pos[0] > p.windowWidth-10) {
+            if (particles[i].pos[0] > width) {
                 particles[i].pos[0] = 0;
             }
             else if (particles[i].pos[0] < 0) {
-                particles[i].pos[0] = p.windowWidth-10;
+                particles[i].pos[0] = width;
             }
             
-            if (particles[i].pos[1] > p.windowHeight-10) {
+            if (particles[i].pos[1] > height) {
                 particles[i].pos[1] = 0;
             } else if (particles[i].pos[1] < 0) {
-                particles[i].pos[1] = p.windowHeight-10;
+                particles[i].pos[1] = height;
             }
         }
 	};

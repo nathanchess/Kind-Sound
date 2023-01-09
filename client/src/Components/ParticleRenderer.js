@@ -109,11 +109,11 @@ export default (props) => {
             particles[i].pF.fill(255,255,255);
             particles[i].pF.rect(particles[i].pos[0], particles[i].pos[1], 7, 7)
 
-            if (particles[i].pos[0] > 900) {
+            if (particles[i].pos[0] > width) {
                 particles[i].pos[0] = 0;
             }
             else if (particles[i].pos[0] < 0) {
-                particles[i].pos[0] = 900;
+                particles[i].pos[0] = width;
             }
             
             if (particles[i].pos[1] > 900) {

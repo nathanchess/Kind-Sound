@@ -52,8 +52,8 @@ export default (props) => {
 
     const draw = (p) => {
         p.background(0,0,0,0);
-//         const context = p.canvas.getContext('2d');
-//         context.clearRect(0, 0, p.canvas.width, p.canvas.height);
+        const context = p.canvas.getContext('2d');
+        context.clearRect(0, 0, p.canvas.width, p.canvas.height);
 
         var yoff = 0;
         for (var y=0; y<rows; y++) {
@@ -106,17 +106,17 @@ export default (props) => {
             particles[i].pF.fill(255,255,255);
             particles[i].pF.rect(particles[i].pos[0], particles[i].pos[1], 7, 7)
 
-            if (particles[i].pos[0] > 800) {
-                particles[i].pos[0] = 400;
+            if (particles[i].pos[0] > p.windowWidth-10) {
+                particles[i].pos[0] = 0;
             }
-            else if (particles[i].pos[0] < 400) {
-                particles[i].pos[0] = 800;
+            else if (particles[i].pos[0] < 0) {
+                particles[i].pos[0] = p.windowWidth-10;
             }
             
-            if (particles[i].pos[1] > 800) {
-                particles[i].pos[1] = 400;
-            } else if (particles[i].pos[1] < 400) {
-                particles[i].pos[1] = 800;
+            if (particles[i].pos[1] > p.windowHeight-10) {
+                particles[i].pos[1] = 0;
+            } else if (particles[i].pos[1] < 0) {
+                particles[i].pos[1] = p.windowHeight-10;
             }
         }
 	};

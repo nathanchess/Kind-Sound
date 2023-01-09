@@ -116,10 +116,10 @@ export default (props) => {
                 particles[i].pos[0] = width;
             }
             
-            if (particles[i].pos[1] > height-50) {
+            if (particles[i].pos[1] > height) {
                 particles[i].pos[1] = 0;
             } else if (particles[i].pos[1] < 0) {
-                particles[i].pos[1] = height-50;
+                particles[i].pos[1] = height;
             }
         }
 	};

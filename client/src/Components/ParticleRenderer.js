@@ -14,7 +14,7 @@ var flowField = []
 var canvas;
 export default (props) => {
     const setup = (p, canvasParentRef) => {
-        canvas = p.createCanvas(p.windowWidth, p.windowHeight).parent(canvasParentRef);
+        canvas = p.createCanvas(p.windowWidth-10, p.windowHeight-10).parent(canvasParentRef);
         canvas.position(0,0)
         canvas.style('z-index', '0');
         
@@ -52,8 +52,8 @@ export default (props) => {
 
     const draw = (p) => {
         p.background(0,0,0,0);
-        const context = p.canvas.getContext('2d');
-        context.clearRect(0, 0, p.canvas.width, p.canvas.height);
+//         const context = p.canvas.getContext('2d');
+//         context.clearRect(0, 0, p.canvas.width, p.canvas.height);
 
         var yoff = 0;
         for (var y=0; y<rows; y++) {

@@ -21,8 +21,8 @@ export default (props) => {
         canvas.position(0,0)
         canvas.style('z-index', '0');
         
-        cols = p.floor(p.width / scl);
-        rows = p.floor(p.height / scl);
+        cols = p.ceil(p.width / scl);
+        rows = p.cei(p.height / scl);
 
         // flowField = new Array(cols * rows);
         for (var row = 0; row < rows; row++) {

@@ -14,9 +14,7 @@ var flowField = []
 var canvas;
 export default (props) => {
     const setup = (p, canvasParentRef) => {
-	let width = 1000
-	let height = 600
-        canvas = p.createCanvas(width, height).parent(canvasParentRef);
+        canvas = p.createCanvas(p.windowWidth, p.windowHeight).parent(canvasParentRef);
         canvas.position(0,0)
         canvas.style('z-index', '0');
         
@@ -31,14 +29,9 @@ export default (props) => {
         }
     
         for (var i=0; i<100; i++) {
-            
             // particles.push(Particle);
             let randX = Math.floor(Math.random()*p.width);
             let randY = Math.floor(Math.random()*p.height);
-            p.fill(0,0,255);
-            p.textSize(34);
-            p.text(`${randX}`, 700, 40);
-            p.text(`${randY}`, 900, 40);
             particles.push({
                 pF: p,
                 pos: [randX, randY],
@@ -46,16 +39,13 @@ export default (props) => {
                 acc: [0,0],
                 maxSpeed: 4,
             });
-            particles[i].pF = p;
+//             particles[i].pF = p;
             
-            particles[i].pos = [Math.random(p.width), Math.random(p.height)];
-            particles[i].vel = [0,0];
-            particles[i].acc = [0,0];
-            // particles[i].pos = p.Vector(600,600);
-            // particles[i].vel = p.Vector(0,0);
-            // particles[i].acc = p.Vector(0,0);
+//             particles[i].pos = [Math.random(p.width), Math.random(p.height)];
+//             particles[i].vel = [0,0];
+//             particles[i].acc = [0,0];
 
-            particles[i].maxSpeed = 4;
+//             particles[i].maxSpeed = 4;
 
         }
     }

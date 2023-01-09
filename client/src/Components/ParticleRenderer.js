@@ -113,7 +113,7 @@ export default (props) => {
                 particles[i].pos[0] = 800;
             }
             
-            if (particles[i].pos[1] > 800 {
+            if (particles[i].pos[1] > 800) {
                 particles[i].pos[1] = 400;
             } else if (particles[i].pos[1] < 400) {
                 particles[i].pos[1] = 800;

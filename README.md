@@ -4,6 +4,8 @@
 
 Welcome to KindSound! 
 
+![kindsound](https://user-images.githubusercontent.com/59159552/211226120-1e89c9d1-5781-47a3-967f-d176ff4f92ac.png)
+
 On our website, you can view and send anonymous kind messages to others around the world! This is a simple yet powerful website that grows in usefulness as more people use it, and we want to help people give the gift of kindness: just a few words can make someone’s day.
 
 ## How we came up with the idea:

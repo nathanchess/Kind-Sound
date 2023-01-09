@@ -14,7 +14,9 @@ var flowField = []
 var canvas;
 export default (props) => {
     const setup = (p, canvasParentRef) => {
-        canvas = p.createCanvas(p.windowWidth-10, p.windowHeight-10).parent(canvasParentRef);
+	let width = 1000
+	let height = 600
+        canvas = p.createCanvas(width, height).parent(canvasParentRef);
         canvas.position(0,0)
         canvas.style('z-index', '0');
         

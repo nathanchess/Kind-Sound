@@ -22,7 +22,7 @@ export default (props) => {
         canvas.style('z-index', '0');
         
         cols = p.ceil(p.width / scl);
-        rows = p.cei(p.height / scl);
+        rows = p.ceil(p.height / scl);
 
         // flowField = new Array(cols * rows);
         for (var row = 0; row < rows; row++) {

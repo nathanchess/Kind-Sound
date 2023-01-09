@@ -16,6 +16,13 @@ Well we thought that it was necessary to spread kindness towards our internet co
 
 Sometimes, all it takes is a kind word to make someone’s day. We wanted to provide a moment of peace for those who are struggling mentally and emotionally and let them know that even strangers in a wide, wide world do care
 
+## Features:
+
+1. NodeJS & ExpressJS backend
+2. React Frontend 
+3. AI model for sentiment tracking
+4. Like / Dislike algorithm in backend to suggest quotes
+
 ## How to use:
 
 1. Run npm start on the client folder to run frontend react application

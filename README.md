@@ -16,3 +16,8 @@ Well we thought that it was necessary to spread kindness towards our internet co
 
 Sometimes, all it takes is a kind word to make someone’s day. We wanted to provide a moment of peace for those who are struggling mentally and emotionally and let them know that even strangers in a wide, wide world do care
 
+## How to use:
+
+1. Run npm start on the client folder to run frontend react application
+2. Run npm start on the server folder to start the port 5000 node js server
+3. That's it! Have fun!

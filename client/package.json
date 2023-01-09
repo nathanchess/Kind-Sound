@@ -13,6 +13,7 @@
     "react-dom": "^18.2.0",
     "react-moving-text": "^0.0.7",
     "react-notifications-component": "^4.0.1",
+    "react-p5": "^1.3.33",
     "react-router-dom": "^6.6.1",
     "react-scripts": "5.0.1",
     "shortid": "^2.2.16",

@@ -106,17 +106,17 @@ export default (props) => {
             particles[i].pF.fill(255,255,255);
             particles[i].pF.rect(particles[i].pos[0], particles[i].pos[1], 7, 7)
 
-            if (particles[i].pos[0] > particles[i].pF.width) {
-                particles[i].pos[0] = 0;
+            if (particles[i].pos[0] > 800) {
+                particles[i].pos[0] = 400;
             }
-            else if (particles[i].pos[0] < 0) {
-                particles[i].pos[0] = particles[i].pF.width;
+            else if (particles[i].pos[0] < 400) {
+                particles[i].pos[0] = 800;
             }
             
-            if (particles[i].pos[1] > particles[i].pF.height) {
-                particles[i].pos[1] = 0;
-            } else if (particles[i].pos[1] < 0) {
-                particles[i].pos[1] = particles[i].pF.height;
+            if (particles[i].pos[1] > 800 {
+                particles[i].pos[1] = 400;
+            } else if (particles[i].pos[1] < 400) {
+                particles[i].pos[1] = 800;
             }
         }
 	};

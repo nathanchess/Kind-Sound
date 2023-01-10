@@ -38,7 +38,7 @@ export default (props) => {
             particles.push({
                 pF: p,
                 pos: [randX, randY],
-                vel: [0,0],
+                vel: [1,1],
                 acc: [0,0],
                 maxSpeed: 4,
             });

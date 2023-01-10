@@ -3,9 +3,9 @@ import './SendMessage.css'
 import TopBar from '../Components/TopBar'
 
 import { Store } from 'react-notifications-component'
-import { useNavigate } from 'react-router-dom';
 
-import axios from 'axios';
+import ReactAudioPlayer from 'react-audio-player';
+import Audio from '../Assets/peacefulmusic.mp3'
 
 // If you want to you can move all the css in SendMessage to App.css
 
@@ -87,6 +87,9 @@ const SendMessage = () => {
         <textarea id="message-input" placeholder="Ex: I hope you have a wonderful day! (max 200 characters)" maxLength="200"></textarea>
           <button className="submit-message" onClick={sentToDatabase}>SEND!</button>
       </div>
+      <ReactAudioPlayer src={Audio} autoPlay />
+
+      <h1 id='music-playing'>Now Playing: Peder B. Helland: Early in the Morning</h1>
     </>
   )
 }

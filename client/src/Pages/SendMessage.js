@@ -39,7 +39,7 @@ const SendMessage = () => {
             headers: { 'Content-Type': 'application/json', 'phrase': messageInputValue },
             body: JSON.stringify({ phrase: messageInputValue })
         };
-        fetch('https://kindwords-api.onrender.com/api/add_phrase', requestOptions).then(response => {
+        fetch('http://localhost:5000/api/random_phrase/', requestOptions).then(response => {
             console.log(response.status);
             if (response.status === 403) {
               messageInput.value = ""

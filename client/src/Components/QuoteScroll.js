@@ -64,7 +64,7 @@ const QuoteScroll = () => {
     function getQuote() {
         const likeButton = document.getElementById('like-button')
         const dislikeButton = document.getElementById('dislike-button')
-        fetch('https://kindwords-api.onrender.com/api/random_phrase/').then(response => response.json()).then(phrase => {
+        fetch('http://localhost:5000/api/random_phrase/').then(response => response.json()).then(phrase => {
             setQuote(<div key={getId()} id="quote"
                           className={'fade-in-text'} style={{animationPlayState: 'running'}}>{phrase.phrase.replace(/['"]+/g, '')}</div>);
         })

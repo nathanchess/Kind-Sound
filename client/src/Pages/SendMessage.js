@@ -39,7 +39,7 @@ const SendMessage = () => {
             headers: { 'Content-Type': 'application/json', 'phrase': messageInputValue },
             body: JSON.stringify({ phrase: messageInputValue })
         };
-        fetch('/api/random_phrase/', requestOptions).then(response => {
+        fetch('/api/add_phrase/', requestOptions).then(response => {
             console.log(response.status);
             if (response.status === 403) {
               messageInput.value = ""

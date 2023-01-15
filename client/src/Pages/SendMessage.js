@@ -41,6 +41,7 @@ const SendMessage = () => {
         };
         fetch('/api/add_phrase/', requestOptions).then(response => {
             console.log(response.status);
+            messageInput.value = ""
             Store.addNotification({
                 title: 'Message Added',
                 message: "Thank you for your submission! Once we process this quote to see if it's safe, we'll add it so everyone can see!",

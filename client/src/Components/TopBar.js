@@ -29,6 +29,8 @@ const TopBar = ( { text, location }) => {
             <h1>[ KIND SOUND ]</h1>
             <p>(Calm and healing music to spread kindness)</p>
         </div>
+
+        <a className={'sendPhrase invisible'}>Send one!</a>
     </div>
   )
 }

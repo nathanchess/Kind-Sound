@@ -13,7 +13,7 @@ import Audio from '../Assets/peacefulmusic.mp3'
 const QuoteScroll = () => {
 
     const [liked, setLiked] = useState(null)
-    const [currentQuote, setQuote] = useState(<div id='quote' className='fade-in-text'>'I once though college was difficult as well, but we will get through it together'</div>)
+    const [currentQuote, setQuote] = useState(<div id='quote' className='fade-in-text'>Click find more kindness to start! 👇</div>)
 
     function dislike() {
         const likeButton = document.getElementById('like-button')

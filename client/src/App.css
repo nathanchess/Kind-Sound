@@ -25,15 +25,47 @@ button, a {
 
 #topBarWrap {
   display: flex;
-  flex-direction: row;
   background: none;
-  align-items: center;
   padding: 20px 0;
   z-index: 2;
 }
 
+@media screen and (max-width: 600px) {
+  #topBarWrap {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  
+  #topBarWrap .invisible {
+    display: none;
+  }
+  
+  #quote-section {
+    margin-top: -20%;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  #topBarWrap {
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+
+  }
+  
+  .invisible {
+    visibility: hidden;
+  }
+}
+
+.invisible {
+  display: none;
+}
+
+
+
+
 #topBarWrap a {
-  position: absolute;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -45,13 +77,43 @@ button, a {
   font-weight: bold;
   text-decoration: none;
   background: none;
-  text-align: center;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 1px;
   border: 1px solid white;
   transition: all .35s;
-  left: 50px;
+  margin: 0 50px;
+  z-index: 2;
+}
+
+@media screen and (max-width: 600px) {
+  #topBarWrap a {
+    text-align: center;
+    flex-direction: column;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    line-height: 100%;
+    width: 50%;
+    height: 7vh;
+    font-size: 2.5vh;
+    border-width: 2px;
+    padding: 5px 10px;
+  }
+  
+  #topBarWrap div#titleWrap {
+    margin-bottom: 20px;
+  }
+  
+  #topBarWrap a hr {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  #topBarWrap a {
+
+  }
 }
 
 #topBarWrap a hr {
@@ -177,6 +239,21 @@ button, a {
 #topBarWrap #titleWrap p {
   letter-spacing: 1px;
   font-size: 13px;
+  text-align: center;
+  padding: 0 10%;
+
+}
+
+@media screen and (max-width: 600px) {
+  #topBarWrap #titleWrap h1 {
+    letter-spacing: 2px;
+    font-size: 3vh;
+  }
+  
+  #topBarWrap #titleWrap p {
+    letter-spacing: 1px;
+    font-size: 2vh;
+  }
 }
 
 /* Quote Section */
@@ -193,13 +270,35 @@ button, a {
 #quote-section .text {
   text-align: center;
   color: white;
-  padding: 20px 200px;
 }
+
+@media screen and (min-width: 601px) {
+  #quote-section .text #quote {
+    padding: 20px 200px;
+  }
+}
+
 
 #quote-section .text #quote {
   margin-bottom: 10px;
-  font-size: 30px;
 }
+
+@media screen and (min-width: 601px) {
+  #quote-section .text #quote {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #quote-section .text #quote {
+    font-size: 3vh;
+  }
+  
+  #sender {
+    font-size: 2vh;
+  }
+}
+
 
 #quote-section .text hr {
   margin-bottom: 20px;
@@ -242,6 +341,14 @@ button, a {
   color: black;
   transition: .35s all;
   z-index: 2;
+}
+
+#sender,  #quote{
+  padding: 0 5%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .hover-underline-animation-black {

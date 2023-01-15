@@ -52,6 +52,12 @@ backend.post('/api/add_phrase/', (req, res) => {
             res.sendStatus(403); // Forbidden
             res.setMaxListeners
             throw new Error("Forbidden: Unsafe phrase");
+        } else if (phrase.length < 4) {
+            console.log("Forbidden, low quality phrase")
+            res.append("Appropriate", false);
+            res.sendStatus(403); // Forbidden
+            res.setMaxListeners
+            throw new Error("Forbidden: Low quality phrase");
         } else {
             res.append("Appropriate", true);
             res.send('PUT request received at /api/add_phrase');

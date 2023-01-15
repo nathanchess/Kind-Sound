@@ -41,12 +41,10 @@ const SendMessage = () => {
         };
         fetch('/api/add_phrase/', requestOptions).then(response => {
             console.log(response.status);
-            if (response.status === 403) {
-              messageInput.value = ""
-              Store.addNotification({
-                title: 'Oh No!',
-                message: 'Our AI seems to have detected some nefarious intent or keywords behind your message. Please retry with a new meessage...',
-                type: 'danger',
+            Store.addNotification({
+                title: 'Message Added',
+                message: "Thank you for your submission! Once we process this quote to see if it's safe, we'll add it so everyone can see!",
+                type: 'success',
                 insert: 'bottom',
                 container: 'bottom-right',
                 animationIn: ['animate__animated animate__fadeIn'],
@@ -54,26 +52,8 @@ const SendMessage = () => {
                 dismiss: {
                     duration: 5000,
                     onScreen: true
-                  }
-              })
-            } else if (response.status === 200) {
-                messageInput.value = ""
-                Store.addNotification({
-                  title: 'Message Added',
-                  message: 'Head back to the home page to see if you can find your quote! Thank you for spreading the kindness!',
-                  type: 'success',
-                  insert: 'bottom',
-                  container: 'bottom-right',
-                  animationIn: ['animate__animated animate__fadeIn'],
-                  animationOut: ["animate__animated", "animate__fadeOut"],
-                  dismiss: {
-                      duration: 5000,
-                      onScreen: true
-                    }
-              })
-            } else {
-
-            }
+                }
+            })
         })
 
 

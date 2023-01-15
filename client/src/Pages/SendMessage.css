@@ -3,7 +3,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
 }
 
 #message-input {
@@ -36,6 +35,14 @@
   padding: 8px 15px;
   transition: .35s all;
   z-index: 2;
+}
+
+@media screen and (max-width: 600px) {
+  .submit-message {
+    border-width: 2px;
+    font-size: 3vh;
+    margin-top: 5vh;
+  }
 }
 
 .submit-message:hover {
